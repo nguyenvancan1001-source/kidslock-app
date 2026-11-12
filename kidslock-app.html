@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kids Lock – Tải ứng dụng</title>
+<meta name="description" content="Kids Lock tự động khoá điện thoại khi trẻ em cầm máy.">
+<style>
+  :root { --bg:#f6f7fb; --card:#fff; --text:#0f172a; --muted:#64748b; --line:#e2e8f0; --brand:#2563eb; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0b1120; --card:#111827; --text:#e5e7eb; --muted:#94a3b8; --line:#1f2937; --brand:#60a5fa; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--text); }
+  main { max-width:520px; margin:0 auto; padding:32px 16px 48px; }
+  .top { display:flex; justify-content:flex-end; }
+  .lang { padding:6px 12px; border:1px solid var(--line); border-radius:8px; background:var(--card); color:var(--text); font:inherit; font-size:14px; cursor:pointer; }
+  .icon { width:88px; height:88px; border-radius:22px; background:#2563eb; display:grid; place-items:center; margin:12px auto 0; }
+  h1 { text-align:center; margin:16px 0 4px; font-size:28px; }
+  .tag { text-align:center; color:var(--muted); margin:0 0 24px; }
+  .dl { display:block; text-align:center; background:var(--brand); color:#fff; text-decoration:none; font-weight:700; font-size:18px; padding:16px; border-radius:14px; }
+  .meta { text-align:center; color:var(--muted); font-size:13px; margin:10px 0 28px; min-height:20px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px; margin-bottom:14px; }
+  .card h2 { font-size:16px; margin:0 0 8px; }
+  ol, ul { margin:0; padding-left:20px; }
+  li { margin:4px 0; }
+  .note { font-size:13px; color:var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <div class="top"><button class="lang" id="btnLang">English</button></div>
+
+  <div class="icon" aria-hidden="true">
+    <svg width="54" height="54" viewBox="0 0 108 108"><path fill="#fff" d="M54,30c-8.3,0 -15,6.7 -15,15v6h-3c-2.2,0 -4,1.8 -4,4v20c0,2.2 1.8,4 4,4h36c2.2,0 4,-1.8 4,-4V55c0,-2.2 -1.8,-4 -4,-4h-3v-6C69,36.7 62.3,30 54,30zM45,45c0,-5 4,-9 9,-9s9,4 9,9v6H45V45z"/><path fill="#facc15" d="M54,56l2.4,4.9 5.4,0.8 -3.9,3.8 0.9,5.4 -4.8,-2.5 -4.8,2.5 0.9,-5.4 -3.9,-3.8 5.4,-0.8z"/></svg>
+  </div>
+  <h1>Kids Lock</h1>
+  <p class="tag" data-i="tag">Tự động khoá điện thoại khi trẻ em cầm máy.</p>
+
+  <a class="dl" id="dl" href="#" data-i="btn">⬇ Tải ứng dụng cho Android</a>
+  <p class="meta" id="meta"></p>
+
+  <div class="card">
+    <h2 data-i="howTitle">Cách cài đặt</h2>
+    <ol>
+      <li data-i="s1">Bấm nút tải ở trên, chờ tải xong file KidsLock.apk.</li>
+      <li data-i="s2">Mở file vừa tải. Nếu máy hỏi, chọn "Cho phép cài từ nguồn này".</li>
+      <li data-i="s3">Mở Kids Lock, đồng ý điều khoản và tạo mã PIN phụ huynh.</li>
+      <li data-i="s4">Cấp quyền Camera, Thông báo, Hiển thị trên ứng dụng khác, rồi bấm Bật bảo vệ.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2 data-i="noteTitle">Lưu ý</h2>
+    <ul class="note">
+      <li data-i="n1">Chỉ dùng cho điện thoại Android 8.0 trở lên. iPhone chưa hỗ trợ.</li>
+      <li data-i="n2">Dùng thử miễn phí 7 ngày, sau đó cần mã bản quyền.</li>
+      <li data-i="n3">Hình ảnh camera chỉ xử lý trên máy, không gửi đi đâu.</li>
+    </ul>
+  </div>
+</main>
+
+<script>
+const BASE = 'https://ssrodnzhuydlupglvepm.supabase.co/storage/v1/object/public/kidslock/';
+const T = {
+  vi: { tag:'Tự động khoá điện thoại khi trẻ em cầm máy.', btn:'⬇ Tải ứng dụng cho Android', howTitle:'Cách cài đặt',
+        s1:'Bấm nút tải ở trên, chờ tải xong file KidsLock.apk.', s2:'Mở file vừa tải. Nếu máy hỏi, chọn "Cho phép cài từ nguồn này".',
+        s3:'Mở Kids Lock, đồng ý điều khoản và tạo mã PIN phụ huynh.', s4:'Cấp quyền Camera, Thông báo, Hiển thị trên ứng dụng khác, rồi bấm Bật bảo vệ.',
+        noteTitle:'Lưu ý', n1:'Chỉ dùng cho điện thoại Android 8.0 trở lên. iPhone chưa hỗ trợ.', n2:'Dùng thử miễn phí 7 ngày, sau đó cần mã bản quyền.',
+        n3:'Hình ảnh camera chỉ xử lý trên máy, không gửi đi đâu.', meta:(b,mb,d)=>`Bản build ${b} · ${mb} MB · cập nhật ${d}`, none:'Chưa có bản tải — vui lòng quay lại sau.', other:'English' },
+  en: { tag:'Locks the phone automatically when a child picks it up.', btn:'⬇ Download for Android', howTitle:'How to install',
+        s1:'Tap the download button and wait for KidsLock.apk to finish.', s2:'Open the downloaded file. If asked, choose "Allow from this source".',
+        s3:'Open Kids Lock, accept the terms and create a parent PIN.', s4:'Allow Camera, Notifications and Display over other apps, then tap Turn on protection.',
+        noteTitle:'Notes', n1:'Android 8.0 or newer only. iPhone is not supported yet.', n2:'7-day free trial, then a license key is required.',
+        n3:'Camera images are processed only on the phone and never sent anywhere.', meta:(b,mb,d)=>`Build ${b} · ${mb} MB · updated ${d}`, none:'No download available yet — please check back later.', other:'Tiếng Việt' }
+};
+let lang = 'vi';
+try { lang = localStorage.getItem('kl_dl_lang') || ((navigator.language || '').startsWith('vi') ? 'vi' : 'en'); } catch (e) {}
+let info = null;
+
+function render() {
+  const t = T[lang];
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i]').forEach(el => { const v = t[el.dataset.i]; if (typeof v === 'string') el.textContent = v; });
+  document.getElementById('btnLang').textContent = t.other;
+  const meta = document.getElementById('meta');
+  if (info) {
+    const d = new Date(info.uploaded_at).toLocaleDateString(lang === 'vi' ? 'vi-VN' : 'en-GB');
+    meta.textContent = t.meta(info.run, (info.size / 1048576).toFixed(1), d);
+  } else if (info === false) {
+    meta.textContent = t.none;
+  }
+}
+document.getElementById('btnLang').onclick = () => {
+  lang = lang === 'vi' ? 'en' : 'vi';
+  try { localStorage.setItem('kl_dl_lang', lang); } catch (e) {}
+  render();
+};
+
+const dl = document.getElementById('dl');
+dl.href = BASE + 'KidsLock-latest.apk?download=KidsLock.apk';
+fetch(BASE + 'latest.json?t=' + Date.now())
+  .then(r => r.ok ? r.json() : Promise.reject())
+  .then(j => { info = j; render(); })
+  .catch(() => { info = false; render(); });
+render();
+</script>
+</body>
+</html>
