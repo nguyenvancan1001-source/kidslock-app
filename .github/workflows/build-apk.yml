@@ -1,0 +1,54 @@
+name: Build APK
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      # Files are uploaded flat, e.g. "app__src__main__AndroidManifest.xml".
+      # Rebuild the Android folder structure: "__" becomes "/".
+      - name: Restore folder structure
+        run: |
+          shopt -s nullglob
+          for f in *__*; do
+            p="${f//__//}"
+            mkdir -p "$(dirname "$p")"
+            mv "$f" "$p"
+          done
+          find app -type f | sort
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.14.3"
+
+      - name: Write license config
+        run: |
+          printf 'supabase.url=%s\nsupabase.anonKey=%s\n' \
+            'https://ssrodnzhuydlupglvepm.supabase.co' \
+            'sb_publishable_ZfKCIJLIlQtS1PSdrhPitw_wRXqxdVH' > kidslock.properties
+
+      - name: Build debug APK
+        run: gradle :app:assembleDebug --stacktrace --no-daemon
+
+      - name: Rename APK
+        run: |
+          mkdir -p out
+          cp app/build/outputs/apk/debug/app-debug.apk "out/KidsLock-debug-run${{ github.run_number }}.apk"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: KidsLock-debug-apk
+          path: out/*.apk
+          retention-days: 30
