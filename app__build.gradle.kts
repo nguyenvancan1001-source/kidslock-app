@@ -25,6 +25,19 @@ android {
         versionName = "1.0.0"
         buildConfigField("String", "SUPABASE_URL", "\"${cfg("supabase.url")}\"")
         buildConfigField("String", "SUPABASE_ANON_KEY", "\"${cfg("supabase.anonKey")}\"")
+
+        // 64-bit ARM only: covers practically all Android phones sold since 2017 and keeps
+        // the APK small (drops x86/x86_64/32-bit copies of the AI libraries).
+        ndk {
+            abiFilters += listOf("arm64-v8a")
+        }
+    }
+
+    packaging {
+        // Compress native libraries inside the APK -> much smaller download.
+        jniLibs {
+            useLegacyPackaging = true
+        }
     }
 
     buildFeatures {
