@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kids Lock – Quản trị bản quyền</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Kids Lock">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#2563eb">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAACiklEQVR42u3dzVHjQBSF0XaXyIAiA0iAkCAsUiIBQgAyYMOCDVBgrB9T6nfPt5uCcZXUZ15LshkO13cvTfqp7hQIDsEhOASH4BAcgkNwCA7BIcEhOASH4BAcgkNwCA7BITgkOASH4BAcgkNwCA7BITgEhwSH4BAcgkNwCA7BITgEh+AQHBIcgkNwCA7BITgEh0ZvcgqeHi5/+9LN/WvymTlk/hqvIyBAycWxgEUskSAcK1kEEonAsSGLKCKdjB2+Mhxjy0jw0cngIw7Hf65ZVR+dDD6C7la2esDlQVk1HLNW9MS1PMdrNu+t7LZZS/jxzeVvXItfc5y4fsv+cZ9jzJgcow4MI6S7Q3Hn4sM+m10q5rwx20PGxrYr+uer1RgePiaobBzn2AgSNheTQ6Vx7HODL3DZ0e0pdhbbiuAQHD6JA4e9Hw7BITgEh+AQHBIcgkMt7edWCjzuHOiR3TA4ij0FH4JIJ8MRDYyj6jtn+z8uF6QaFkftN9x3fnQmh+AQHCt7e7xyEuAQHPPHhuEBh+BYdLVheMAhOBbdpBgecAiORc82DI/J061lf+vi9tnkKNK2a5kgI2tb2WpFQ2TEXXOsX9ccGS5IyYBjiwVOkxE6ORYsc6CM3G1l1mJnynDNITgER/PZQTgEh2HQvPG2u1sYdGwrX1h8vl/99sdYLhMWx7+UPEUmLE75tkwinpA2D0nhEByCQ3AIDsEhOASH4Gj+p9/UozM5NDKOqsNj/8fVnUdH1PxKDSyK45BtRXAIDsEhOASHBIfgEByCQ3AIDsEhOASH4BAcEhyCQ3AIDsEhOASH4BAcgkOCQ3AIDsEhOASH4BAcgkNwSHAIDsEhOASH4BAcgkNwqH7vuFi5qUCdv2IAAAAASUVORK5CYII=">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAACiklEQVR42u3dzVHjQBSF0XaXyIAiA0iAkCAsUiIBQgAyYMOCDVBgrB9T6nfPt5uCcZXUZ15LshkO13cvTfqp7hQIDsEhOASH4BAcgkNwCA7BIcEhOASH4BAcgkNwCA7BITgkOASH4BAcgkNwCA7BITgEhwSH4BAcgkNwCA7BITgEh+AQHBIcgkNwCA7BITgEh0ZvcgqeHi5/+9LN/WvymTlk/hqvIyBAycWxgEUskSAcK1kEEonAsSGLKCKdjB2+Mhxjy0jw0cngIw7Hf65ZVR+dDD6C7la2esDlQVk1HLNW9MS1PMdrNu+t7LZZS/jxzeVvXItfc5y4fsv+cZ9jzJgcow4MI6S7Q3Hn4sM+m10q5rwx20PGxrYr+uer1RgePiaobBzn2AgSNheTQ6Vx7HODL3DZ0e0pdhbbiuAQHD6JA4e9Hw7BITgEh+AQHBIcgkMt7edWCjzuHOiR3TA4ij0FH4JIJ8MRDYyj6jtn+z8uF6QaFkftN9x3fnQmh+AQHCt7e7xyEuAQHPPHhuEBh+BYdLVheMAhOBbdpBgecAiORc82DI/J061lf+vi9tnkKNK2a5kgI2tb2WpFQ2TEXXOsX9ccGS5IyYBjiwVOkxE6ORYsc6CM3G1l1mJnynDNITgER/PZQTgEh2HQvPG2u1sYdGwrX1h8vl/99sdYLhMWx7+UPEUmLE75tkwinpA2D0nhEByCQ3AIDsEhOASH4Gj+p9/UozM5NDKOqsNj/8fVnUdH1PxKDSyK45BtRXAIDsEhOASHBIfgEByCQ3AIDsEhOASH4BAcEhyCQ3AIDsEhOASH4BAcgkOCQ3AIDsEhOASH4BAcgkNwSHAIDsEhOASH4BAcgkNwqH7vuFi5qUCdv2IAAAAASUVORK5CYII=">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<style>
+  :root {
+    --bg: #f6f7fb; --card: #ffffff; --text: #0f172a; --muted: #64748b; --line: #e2e8f0;
+    --brand: #2563eb; --brand-soft: #dbeafe; --ok: #15803d; --ok-soft: #dcfce7;
+    --warn: #b45309; --warn-soft: #fef3c7; --bad: #b91c1c; --bad-soft: #fee2e2;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0b1120; --card: #111827; --text: #e5e7eb; --muted: #94a3b8; --line: #1f2937;
+      --brand: #60a5fa; --brand-soft: #1e3a8a55; --ok: #4ade80; --ok-soft: #14532d55;
+      --warn: #fbbf24; --warn-soft: #78350f55; --bad: #f87171; --bad-soft: #7f1d1d55;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); }
+  header { display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: var(--card); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 5; }
+  header h1 { font-size: 18px; margin: 0; flex: 1; }
+  header .who { color: var(--muted); font-size: 13px; }
+  main { max-width: 1100px; margin: 0 auto; padding: 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+  .card h2 { font-size: 16px; margin: 0 0 12px; }
+  .grid { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+  label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 4px; }
+  input, select, textarea { width: 100%; padding: 9px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--text); font: inherit; }
+  button { padding: 9px 14px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--text); font: inherit; cursor: pointer; }
+  button.primary { background: var(--brand); border-color: var(--brand); color: #fff; }
+  button.small { padding: 5px 9px; font-size: 13px; }
+  button:disabled { opacity: .5; cursor: default; }
+  .stats { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); margin-bottom: 16px; }
+  .stat { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+  .stat b { display: block; font-size: 24px; }
+  .stat span { color: var(--muted); font-size: 13px; }
+  table { width: 100%; border-collapse: collapse; }
+  th, td { text-align: left; padding: 9px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-size: 12px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .03em; }
+  .key { font-family: ui-monospace, Menlo, Consolas, monospace; font-weight: 600; white-space: nowrap; }
+  .pill { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+  .pill.ok { background: var(--ok-soft); color: var(--ok); }
+  .pill.warn { background: var(--warn-soft); color: var(--warn); }
+  .pill.bad { background: var(--bad-soft); color: var(--bad); }
+  .muted { color: var(--muted); font-size: 13px; }
+  .row-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+  .devices { margin-top: 6px; font-size: 13px; }
+  .devices div { display: flex; gap: 8px; align-items: center; padding: 3px 0; }
+  .toolbar { display: flex; gap: 10px; flex-wrap: wrap; align-items: end; margin-bottom: 12px; }
+  .toolbar > div { flex: 1; min-width: 180px; }
+  #toast { position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%); background: var(--text); color: var(--bg); padding: 10px 16px; border-radius: 10px; display: none; z-index: 20; max-width: 90vw; }
+  #login { max-width: 380px; margin: 60px auto; }
+  .hidden { display: none !important; }
+  @media (max-width: 720px) {
+    table, thead, tbody, tr, td { display: block; }
+    thead { display: none; }
+    tr { border: 1px solid var(--line); border-radius: 10px; margin-bottom: 10px; padding: 6px 4px; }
+    td { border: none; padding: 5px 8px; }
+    td::before { content: attr(data-label); display: block; font-size: 11px; color: var(--muted); text-transform: uppercase; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>🔒 Kids Lock · <span data-i18n="title">Quản trị bản quyền</span></h1>
+  <span class="who" id="who"></span>
+  <button class="small" id="btnLang">EN</button>
+  <button class="small hidden" id="btnLogout" data-i18n="logout">Đăng xuất</button>
+</header>
+
+<!-- Login -->
+<section id="login" class="card">
+  <h2 data-i18n="loginTitle">Đăng nhập Quản trị viên</h2>
+  <div style="margin-bottom:10px"><label data-i18n="email">Email</label><input id="email" type="email" autocomplete="username"></div>
+  <div style="margin-bottom:12px"><label data-i18n="password">Mật khẩu</label><input id="password" type="password" autocomplete="current-password"></div>
+  <button class="primary" id="btnLogin" style="width:100%" data-i18n="login">Đăng nhập</button>
+  <p class="muted" id="loginMsg"></p>
+  <p class="muted hidden" id="installTip" data-i18n="installTip">Mẹo: trên iPhone, bấm nút Chia sẻ (□↑) → "Thêm vào MH chính" để mở trang này như một ứng dụng.</p>
+</section>
+
+<main id="app" class="hidden">
+  <div class="stats">
+    <div class="stat"><b id="stLicenses">–</b><span data-i18n="stLicenses">Mã bản quyền đang hiệu lực</span></div>
+    <div class="stat"><b id="stLicensed">–</b><span data-i18n="stLicensed">Thiết bị đã kích hoạt</span></div>
+    <div class="stat"><b id="stTrial">–</b><span data-i18n="stTrial">Thiết bị đang dùng thử</span></div>
+    <div class="stat"><b id="stDevices">–</b><span data-i18n="stDevices">Tổng thiết bị đã cài</span></div>
+  </div>
+
+  <section class="card">
+    <h2 data-i18n="createTitle">Tạo mã bản quyền</h2>
+    <div class="grid">
+      <div><label data-i18n="plan">Gói</label>
+        <select id="cPlan">
+          <option value="standard">Standard</option>
+          <option value="family">Family</option>
+          <option value="business">Business</option>
+        </select></div>
+      <div><label data-i18n="maxDevices">Số thiết bị tối đa</label><input id="cMax" type="number" min="1" max="100" value="1"></div>
+      <div><label data-i18n="duration">Thời hạn</label>
+        <select id="cDur">
+          <option value="1" data-i18n="m1">1 tháng</option>
+          <option value="3" data-i18n="m3">3 tháng</option>
+          <option value="6" data-i18n="m6">6 tháng</option>
+          <option value="12" selected data-i18n="m12">12 tháng</option>
+          <option value="0" data-i18n="lifetime">Vĩnh viễn</option>
+        </select></div>
+      <div><label data-i18n="custName">Tên khách hàng</label><input id="cName" maxlength="200"></div>
+      <div><label data-i18n="custPhone">Số điện thoại</label><input id="cPhone" maxlength="40"></div>
+      <div><label data-i18n="custEmail">Email khách hàng</label><input id="cEmail" type="email" maxlength="200"></div>
+      <div style="grid-column: 1 / -1"><label data-i18n="note">Ghi chú</label><input id="cNote" maxlength="1000"></div>
+      <div><label data-i18n="quantity">Số lượng mã</label><input id="cQty" type="number" min="1" max="50" value="1"></div>
+    </div>
+    <div style="margin-top:12px"><button class="primary" id="btnCreate" data-i18n="create">Tạo mã</button></div>
+    <p class="muted" id="createdKeys"></p>
+  </section>
+
+  <section class="card">
+    <h2 data-i18n="listTitle">Danh sách bản quyền</h2>
+    <div class="toolbar">
+      <div><label data-i18n="search">Tìm (mã, tên, SĐT, email)</label><input id="q"></div>
+      <div style="flex:0"><button id="btnReload" data-i18n="reload">Tải lại</button></div>
+    </div>
+    <table>
+      <thead><tr>
+        <th data-i18n="colKey">Mã</th><th data-i18n="colCustomer">Khách hàng</th><th data-i18n="colPlan">Gói / thiết bị</th>
+        <th data-i18n="colExpiry">Hạn dùng</th><th data-i18n="colStatus">Trạng thái</th><th data-i18n="colActions">Thao tác</th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <p class="muted" id="listMsg"></p>
+  </section>
+</main>
+
+<div id="toast"></div>
+
+<script>
+/* ================= CONFIG — điền thông tin dự án Supabase của Kids Lock ================= */
+const SUPABASE_URL = 'https://ssrodnzhuydlupglvepm.supabase.co'; // AIPOS - PRO
+const SUPABASE_KEY = 'sb_publishable_ZfKCIJLIlQtS1PSdrhPitw_wRXqxdVH';
+const TRIAL_DAYS = 7; // keep in sync with kl_trial_days() in SQL
+/* ======================================================================================== */
+
+const I18N = {
+  vi: {
+    title: 'Quản trị bản quyền', logout: 'Đăng xuất', loginTitle: 'Đăng nhập Quản trị viên', email: 'Email',
+    password: 'Mật khẩu', login: 'Đăng nhập', stLicenses: 'Mã bản quyền đang hiệu lực', stLicensed: 'Thiết bị đã kích hoạt',
+    stTrial: 'Thiết bị đang dùng thử', stDevices: 'Tổng thiết bị đã cài', createTitle: 'Tạo mã bản quyền', plan: 'Gói',
+    maxDevices: 'Số thiết bị tối đa', duration: 'Thời hạn', m1: '1 tháng', m3: '3 tháng', m6: '6 tháng', m12: '12 tháng',
+    lifetime: 'Vĩnh viễn', custName: 'Tên khách hàng', custPhone: 'Số điện thoại', custEmail: 'Email khách hàng',
+    note: 'Ghi chú', quantity: 'Số lượng mã', create: 'Tạo mã', listTitle: 'Danh sách bản quyền',
+    search: 'Tìm (mã, tên, SĐT, email)', reload: 'Tải lại', colKey: 'Mã', colCustomer: 'Khách hàng',
+    colPlan: 'Gói / thiết bị', colExpiry: 'Hạn dùng', colStatus: 'Trạng thái', colActions: 'Thao tác',
+    active: 'Hiệu lực', revoked: 'Đã vô hiệu', expired: 'Hết hạn', copy: 'Sao chép', extend: '+ Gia hạn',
+    revoke: 'Vô hiệu hoá', reactivate: 'Kích hoạt lại', unlink: 'Gỡ', devices: 'Thiết bị', noDevices: 'Chưa có thiết bị',
+    copied: 'Đã sao chép', saved: 'Đã lưu', created: 'Đã tạo', notAdmin: 'Tài khoản này không có quyền quản trị.',
+    loginFail: 'Đăng nhập không thành công', confirmRevoke: 'Vô hiệu hoá mã này? Các thiết bị đang dùng sẽ mất bản quyền ở lần kiểm tra tiếp theo.',
+    confirmUnlink: 'Gỡ thiết bị này khỏi mã bản quyền?', extendPrompt: 'Gia hạn thêm bao nhiêu tháng? (0 = vĩnh viễn)',
+    empty: 'Chưa có mã bản quyền.', configMissing: 'Chưa điền SUPABASE_URL / SUPABASE_KEY trong file.',
+    lastSeen: 'lần cuối', error: 'Lỗi',
+    installTip: 'Mẹo: trên iPhone, bấm nút Chia sẻ (□↑) → "Thêm vào MH chính" để mở trang này như một ứng dụng.'
+  },
+  en: {
+    title: 'License admin', logout: 'Sign out', loginTitle: 'Admin sign in', email: 'Email',
+    password: 'Password', login: 'Sign in', stLicenses: 'Active license keys', stLicensed: 'Activated devices',
+    stTrial: 'Devices on trial', stDevices: 'Total installed devices', createTitle: 'Create license keys', plan: 'Plan',
+    maxDevices: 'Max devices', duration: 'Duration', m1: '1 month', m3: '3 months', m6: '6 months', m12: '12 months',
+    lifetime: 'Lifetime', custName: 'Customer name', custPhone: 'Phone', custEmail: 'Customer email',
+    note: 'Note', quantity: 'Number of keys', create: 'Create', listTitle: 'Licenses',
+    search: 'Search (key, name, phone, email)', reload: 'Reload', colKey: 'Key', colCustomer: 'Customer',
+    colPlan: 'Plan / devices', colExpiry: 'Expires', colStatus: 'Status', colActions: 'Actions',
+    active: 'Active', revoked: 'Revoked', expired: 'Expired', copy: 'Copy', extend: '+ Extend',
+    revoke: 'Revoke', reactivate: 'Reactivate', unlink: 'Remove', devices: 'Devices', noDevices: 'No devices yet',
+    copied: 'Copied', saved: 'Saved', created: 'Created', notAdmin: 'This account is not an admin.',
+    loginFail: 'Sign in failed', confirmRevoke: 'Revoke this key? Devices using it lose the license at their next check.',
+    confirmUnlink: 'Remove this device from the license?', extendPrompt: 'Extend by how many months? (0 = lifetime)',
+    empty: 'No license keys yet.', configMissing: 'SUPABASE_URL / SUPABASE_KEY are not set in this file.',
+    lastSeen: 'last seen', error: 'Error',
+    installTip: 'Tip: on iPhone, tap Share (□↑) → "Add to Home Screen" to open this page like an app.'
+  }
+};
+
+let lang = 'vi';
+try { lang = localStorage.getItem('kl_lang') || 'vi'; } catch (e) {}
+const t = k => (I18N[lang] && I18N[lang][k]) || I18N.vi[k] || k;
+const $ = id => document.getElementById(id);
+let sb = null, licenses = [], user = null;
+
+function applyLang() {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
+  $('btnLang').textContent = lang === 'vi' ? 'EN' : 'VI';
+  render();
+}
+$('btnLang').onclick = () => {
+  lang = lang === 'vi' ? 'en' : 'vi';
+  try { localStorage.setItem('kl_lang', lang); } catch (e) {}
+  applyLang();
+};
+
+function toast(msg) {
+  const el = $('toast'); el.textContent = msg; el.style.display = 'block';
+  clearTimeout(toast._t); toast._t = setTimeout(() => el.style.display = 'none', 2600);
+}
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const fmtDate = d => d ? new Date(d).toLocaleDateString(lang === 'vi' ? 'vi-VN' : 'en-GB') : t('lifetime');
+
+// KL-XXXX-XXXX-XXXX-XXXX, 32-char alphabet without 0/O/1/I → 80 random bits
+function newKey() {
+  const A = '23456789ABCDEFGHJKLMNPQRSTUVWXYZ';
+  const b = new Uint8Array(16); crypto.getRandomValues(b);
+  const chars = Array.from(b, x => A[x & 31]).join('');
+  return 'KL-' + chars.match(/.{4}/g).join('-');
+}
+function addMonths(base, m) { const d = new Date(base); d.setMonth(d.getMonth() + m); return d; }
+
+// ---------------- auth ----------------
+async function init() {
+  applyLang();
+  const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
+  const standalone = window.navigator.standalone === true || window.matchMedia('(display-mode: standalone)').matches;
+  if (isIOS && !standalone) $('installTip').classList.remove('hidden');
+  if (SUPABASE_URL.includes('YOUR-PROJECT') || SUPABASE_KEY.includes('YOUR_')) {
+    $('loginMsg').textContent = t('configMissing'); $('btnLogin').disabled = true; return;
+  }
+  sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+  const { data } = await sb.auth.getSession();
+  if (data.session) await enter(data.session.user);
+}
+
+$('btnLogin').onclick = async () => {
+  $('loginMsg').textContent = '';
+  $('btnLogin').disabled = true;
+  const { data, error } = await sb.auth.signInWithPassword({ email: $('email').value.trim(), password: $('password').value });
+  $('btnLogin').disabled = false;
+  if (error) { $('loginMsg').textContent = t('loginFail') + ': ' + error.message; return; }
+  await enter(data.user);
+};
+$('password').addEventListener('keydown', e => { if (e.key === 'Enter') $('btnLogin').click(); });
+
+$('btnLogout').onclick = async () => { await sb.auth.signOut(); location.reload(); };
+
+async function enter(u) {
+  const { data, error } = await sb.from('kl_admins').select('user_id').eq('user_id', u.id).maybeSingle();
+  if (error || !data) {
+    $('loginMsg').textContent = t('notAdmin');
+    await sb.auth.signOut();
+    return;
+  }
+  user = u;
+  $('who').textContent = u.email;
+  $('login').classList.add('hidden');
+  $('app').classList.remove('hidden');
+  $('btnLogout').classList.remove('hidden');
+  await load();
+}
+
+// ---------------- data ----------------
+async function load() {
+  $('listMsg').textContent = '';
+  const { data, error } = await sb.from('kl_licenses')
+    .select('*, kl_devices(device_id, model, app_version, last_seen, activated_at)')
+    .order('created_at', { ascending: false })
+    .limit(1000);
+  if (error) { $('listMsg').textContent = t('error') + ': ' + error.message; return; }
+  licenses = data || [];
+  render();
+  loadStats();
+}
+
+async function loadStats() {
+  const now = new Date();
+  const trialSince = new Date(now.getTime() - TRIAL_DAYS * 86400000).toISOString();
+  const [all, licensed, trial] = await Promise.all([
+    sb.from('kl_devices').select('device_id', { count: 'exact', head: true }),
+    sb.from('kl_devices').select('device_id', { count: 'exact', head: true }).not('license_id', 'is', null),
+    sb.from('kl_devices').select('device_id', { count: 'exact', head: true }).is('license_id', null).gt('first_seen', trialSince)
+  ]);
+  $('stDevices').textContent = all.count ?? '–';
+  $('stLicensed').textContent = licensed.count ?? '–';
+  $('stTrial').textContent = trial.count ?? '–';
+  $('stLicenses').textContent = licenses.filter(l => stateOf(l) === 'active').length;
+}
+
+function stateOf(l) {
+  if (l.status !== 'active') return 'revoked';
+  if (l.expires_at && new Date(l.expires_at) <= new Date()) return 'expired';
+  return 'active';
+}
+
+function render() {
+  const body = $('rows');
+  if (!body || !sb || !user) return;
+  const q = $('q').value.trim().toLowerCase();
+  const list = licenses.filter(l => !q || [l.license_key, l.customer_name, l.customer_phone, l.customer_email, l.note]
+    .some(v => (v || '').toLowerCase().includes(q)));
+  if (!list.length) { body.innerHTML = ''; $('listMsg').textContent = t('empty'); return; }
+  $('listMsg').textContent = '';
+  body.innerHTML = list.map(l => {
+    const st = stateOf(l);
+    const pill = st === 'active' ? 'ok' : st === 'expired' ? 'warn' : 'bad';
+    const devs = (l.kl_devices || []);
+    const devHtml = devs.length ? devs.map(d =>
+      `<div><span>${esc(d.model || d.device_id)}</span><span class="muted">${esc(d.app_version || '')} · ${t('lastSeen')} ${fmtDate(d.last_seen)}</span>
+       <button class="small" data-act="unlink" data-dev="${esc(d.device_id)}">${t('unlink')}</button></div>`).join('')
+      : `<span class="muted">${t('noDevices')}</span>`;
+    return `<tr data-id="${l.id}">
+      <td data-label="${t('colKey')}"><span class="key">${esc(l.license_key)}</span><br>
+        <button class="small" data-act="copy" data-key="${esc(l.license_key)}">${t('copy')}</button></td>
+      <td data-label="${t('colCustomer')}">${esc(l.customer_name || '—')}<br><span class="muted">${esc(l.customer_phone || '')} ${esc(l.customer_email || '')}</span>
+        ${l.note ? `<br><span class="muted">${esc(l.note)}</span>` : ''}</td>
+      <td data-label="${t('colPlan')}">${esc(l.plan)} · ${devs.length}/${l.max_devices}
+        <div class="devices">${devHtml}</div></td>
+      <td data-label="${t('colExpiry')}">${fmtDate(l.expires_at)}</td>
+      <td data-label="${t('colStatus')}"><span class="pill ${pill}">${t(st)}</span></td>
+      <td data-label="${t('colActions')}"><div class="row-actions">
+        <button class="small" data-act="extend">${t('extend')}</button>
+        <button class="small" data-act="toggle">${l.status === 'active' ? t('revoke') : t('reactivate')}</button>
+      </div></td></tr>`;
+  }).join('');
+}
+$('q').addEventListener('input', render);
+$('btnReload').onclick = load;
+
+$('rows').addEventListener('click', async e => {
+  const btn = e.target.closest('button'); if (!btn) return;
+  const tr = btn.closest('tr'); const lic = licenses.find(l => l.id === tr.dataset.id);
+  const act = btn.dataset.act;
+  if (act === 'copy') {
+    try { await navigator.clipboard.writeText(btn.dataset.key); toast(t('copied')); } catch (err) { prompt('', btn.dataset.key); }
+    return;
+  }
+  btn.disabled = true;
+  try {
+    if (act === 'extend') {
+      const m = prompt(t('extendPrompt'), '12');
+      if (m === null) return;
+      const months = parseInt(m, 10);
+      if (isNaN(months) || months < 0 || months > 120) return;
+      let expires = null;
+      if (months > 0) {
+        const base = lic.expires_at && new Date(lic.expires_at) > new Date() ? new Date(lic.expires_at) : new Date();
+        expires = addMonths(base, months).toISOString();
+      }
+      await must(sb.from('kl_licenses').update({ expires_at: expires }).eq('id', lic.id));
+    } else if (act === 'toggle') {
+      if (lic.status === 'active' && !confirm(t('confirmRevoke'))) return;
+      await must(sb.from('kl_licenses').update({ status: lic.status === 'active' ? 'revoked' : 'active' }).eq('id', lic.id));
+    } else if (act === 'unlink') {
+      if (!confirm(t('confirmUnlink'))) return;
+      await must(sb.from('kl_devices').update({ license_id: null, activated_at: null }).eq('device_id', btn.dataset.dev));
+    }
+    toast(t('saved'));
+    await load();
+  } catch (err) {
+    toast(t('error') + ': ' + err.message);
+  } finally {
+    btn.disabled = false;
+  }
+});
+
+async function must(q) { const { error } = await q; if (error) throw error; }
+
+$('btnCreate').onclick = async () => {
+  const qty = Math.min(50, Math.max(1, parseInt($('cQty').value, 10) || 1));
+  const months = parseInt($('cDur').value, 10);
+  const max = Math.min(100, Math.max(1, parseInt($('cMax').value, 10) || 1));
+  const base = {
+    plan: $('cPlan').value,
+    max_devices: max,
+    expires_at: months > 0 ? addMonths(new Date(), months).toISOString() : null,
+    customer_name: $('cName').value.trim() || null,
+    customer_phone: $('cPhone').value.trim() || null,
+    customer_email: $('cEmail').value.trim() || null,
+    note: $('cNote').value.trim() || null,
+    created_by: user.id
+  };
+  $('btnCreate').disabled = true;
+  const keys = [];
+  try {
+    for (let i = 0; i < qty; i++) {
+      let ok = false;
+      for (let attempt = 0; attempt < 3 && !ok; attempt++) {
+        const key = newKey();
+        const { error } = await sb.from('kl_licenses').insert({ ...base, license_key: key });
+        if (!error) { keys.push(key); ok = true; }
+        else if (error.code !== '23505') throw error; // 23505 = duplicate key → retry
+      }
+    }
+    $('createdKeys').innerHTML = t('created') + ': <span class="key">' + keys.map(esc).join('</span>, <span class="key">') + '</span>';
+    toast(t('created') + ' ' + keys.length);
+    await load();
+  } catch (err) {
+    toast(t('error') + ': ' + err.message);
+  } finally {
+    $('btnCreate').disabled = false;
+  }
+};
+
+init();
+</script>
+</body>
+</html>

@@ -39,6 +39,7 @@
 
   <a class="dl" id="dl" href="#" data-i="btn">⬇ Tải ứng dụng cho Android</a>
   <p class="meta" id="meta"></p>
+  <div class="card hidden-ios" id="iosNote" style="display:none"></div>
 
   <div class="card">
     <h2 data-i="howTitle">Cách cài đặt</h2>
@@ -67,16 +68,17 @@ const T = {
         s1:'Bấm nút tải ở trên, chờ tải xong file KidsLock.apk.', s2:'Mở file vừa tải. Nếu máy hỏi, chọn "Cho phép cài từ nguồn này".',
         s3:'Mở Kids Lock, đồng ý điều khoản và tạo mã PIN phụ huynh.', s4:'Cấp quyền Camera, Thông báo, Hiển thị trên ứng dụng khác, rồi bấm Bật bảo vệ.',
         noteTitle:'Lưu ý', n1:'Chỉ dùng cho điện thoại Android 8.0 trở lên. iPhone chưa hỗ trợ.', n2:'Dùng thử miễn phí 7 ngày, sau đó cần mã bản quyền.',
-        n3:'Hình ảnh camera chỉ xử lý trên máy, không gửi đi đâu.', meta:(b,mb,d)=>`Bản build ${b} · ${mb} MB · cập nhật ${d}`, none:'Chưa có bản tải — vui lòng quay lại sau.', other:'English' },
+        n3:'Hình ảnh camera chỉ xử lý trên máy, không gửi đi đâu.', meta:(b,mb,d)=>`Bản build ${b} · ${mb} MB · cập nhật ${d}`, none:'Chưa có bản tải — vui lòng quay lại sau.', other:'English', ios:'Kids Lock hiện chỉ chạy trên điện thoại Android. iPhone không cho phép ứng dụng tự khoá máy bằng camera — trên iPhone, hãy dùng tính năng Thời gian sử dụng (Screen Time) có sẵn.' },
   en: { tag:'Locks the phone automatically when a child picks it up.', btn:'⬇ Download for Android', howTitle:'How to install',
         s1:'Tap the download button and wait for KidsLock.apk to finish.', s2:'Open the downloaded file. If asked, choose "Allow from this source".',
         s3:'Open Kids Lock, accept the terms and create a parent PIN.', s4:'Allow Camera, Notifications and Display over other apps, then tap Turn on protection.',
         noteTitle:'Notes', n1:'Android 8.0 or newer only. iPhone is not supported yet.', n2:'7-day free trial, then a license key is required.',
-        n3:'Camera images are processed only on the phone and never sent anywhere.', meta:(b,mb,d)=>`Build ${b} · ${mb} MB · updated ${d}`, none:'No download available yet — please check back later.', other:'Tiếng Việt' }
+        n3:'Camera images are processed only on the phone and never sent anywhere.', meta:(b,mb,d)=>`Build ${b} · ${mb} MB · updated ${d}`, none:'No download available yet — please check back later.', other:'Tiếng Việt', ios:'Kids Lock currently runs on Android phones only. iPhone does not allow apps to lock the phone using the camera — on iPhone, use the built-in Screen Time feature.' }
 };
 let lang = 'vi';
 try { lang = localStorage.getItem('kl_dl_lang') || ((navigator.language || '').startsWith('vi') ? 'vi' : 'en'); } catch (e) {}
 let info = null;
+const IS_IOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
 
 function render() {
   const t = T[lang];
@@ -90,6 +92,7 @@ function render() {
   } else if (info === false) {
     meta.textContent = t.none;
   }
+  if (IS_IOS) { const n = document.getElementById('iosNote'); n.style.display = 'block'; n.textContent = t.ios; }
 }
 document.getElementById('btnLang').onclick = () => {
   lang = lang === 'vi' ? 'en' : 'vi';
