@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textAppearance="?attr/textAppearanceHeadlineMedium"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/main_tagline"
+            android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+        <com.google.android.material.card.MaterialCardView
+            style="?attr/materialCardViewFilledStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tvStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceTitleLarge" />
+
+                <TextView
+                    android:id="@+id/tvAi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+                <TextView
+                    android:id="@+id/tvLicense"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+                <Button
+                    android:id="@+id/btnToggle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/main_section_permissions"
+            android:textAppearance="?attr/textAppearanceTitleMedium" />
+
+        <LinearLayout style="@style/PermRow">
+            <TextView android:id="@+id/tvPermCamera" style="@style/PermLabel" />
+            <Button android:id="@+id/btnPermCamera" style="@style/PermButton" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/PermRow">
+            <TextView android:id="@+id/tvPermNotif" style="@style/PermLabel" />
+            <Button android:id="@+id/btnPermNotif" style="@style/PermButton" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/PermRow">
+            <TextView android:id="@+id/tvPermOverlay" style="@style/PermLabel" />
+            <Button android:id="@+id/btnPermOverlay" style="@style/PermButton" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/PermRow">
+            <TextView android:id="@+id/tvPermBattery" style="@style/PermLabel" />
+            <Button android:id="@+id/btnPermBattery" style="@style/PermButton" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSettings"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/main_btn_settings" />
+
+        <Button
+            android:id="@+id/btnLanguage"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/main_btn_language" />
+
+        <TextView
+            android:id="@+id/tvVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="24dp"
+            android:textAppearance="?attr/textAppearanceBodySmall" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="brand">#2563EB</color>
+    <color name="brand_accent">#7DD3FC</color>
+    <color name="ic_bg">#2563EB</color>
+    <color name="lock_bg">#FF0F172A</color>
+    <color name="lock_text_dim">#FFCBD5E1</color>
+    <color name="lock_error">#FFFCA5A5</color>
+</resources>

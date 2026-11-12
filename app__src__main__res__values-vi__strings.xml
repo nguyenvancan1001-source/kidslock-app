@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ok">Đồng ý</string>
+    <string name="cancel">Huỷ</string>
+
+    <!-- Thông báo -->
+    <string name="notif_channel_protection">Trạng thái bảo vệ</string>
+    <string name="notif_channel_alerts">Cảnh báo</string>
+    <string name="notif_protecting">Kids Lock đang bảo vệ điện thoại</string>
+    <string name="notif_protecting_text">Đang kiểm tra người dùng máy. Hình ảnh chỉ xử lý trên máy này.</string>
+    <string name="notif_locked_text">Đã khoá máy: phát hiện trẻ em.</string>
+    <string name="notif_standby_text">Chờ: cần hiệu chỉnh AI trong Cài đặt.</string>
+    <string name="alert_boot_title">Bật lại chế độ bảo vệ</string>
+    <string name="alert_boot_text">Điện thoại vừa khởi động lại. Mở Kids Lock một lần để tiếp tục bảo vệ.</string>
+    <string name="alert_license_title">Tạm dừng bảo vệ</string>
+    <string name="alert_license_text">Hết hạn dùng thử hoặc bản quyền, hoặc không kiểm tra được bản quyền trong 7 ngày. Mở Kids Lock để kích hoạt.</string>
+    <string name="alert_service_title">Đã dừng bảo vệ</string>
+    <string name="alert_service_text">Android đã dừng chế độ bảo vệ. Mở Kids Lock để bật lại.</string>
+    <string name="alert_overlay_text">Kids Lock cần quyền \"Hiển thị trên ứng dụng khác\" để khoá màn hình.</string>
+
+    <!-- Màn hình khoá -->
+    <string name="lock_title">Điện thoại đã khoá</string>
+    <string name="lock_message">Điện thoại này dành cho người lớn. Con hãy nhờ bố mẹ mở khoá nhé.</string>
+    <string name="lock_enter_pin">Nhập mã PIN phụ huynh</string>
+    <string name="lock_wrong_pin">Sai mã PIN</string>
+    <string name="lock_try_later">Nhập sai quá nhiều lần. Thử lại sau %1$d giây.</string>
+    <string name="lock_biometric">Mở bằng vân tay / khuôn mặt</string>
+    <string name="key_del">⌫</string>
+    <string name="key_ok">OK</string>
+    <string name="bio_title">Phụ huynh mở khoá</string>
+    <string name="bio_subtitle">Xác nhận là chủ máy</string>
+    <string name="use_pin">Dùng mã PIN</string>
+
+    <!-- Màn hình chính -->
+    <string name="main_tagline">Tự động khoá điện thoại khi trẻ em cầm máy.</string>
+    <string name="main_status_on">🛡️ Đang BẬT bảo vệ</string>
+    <string name="main_status_off">Đang TẮT bảo vệ</string>
+    <string name="main_status_standby">⏸️ Đang chờ: hãy hiệu chỉnh AI trong Cài đặt</string>
+    <string name="main_status_locked">🔒 Máy đang bị khoá</string>
+    <string name="main_btn_enable">Bật bảo vệ</string>
+    <string name="main_btn_disable">Tắt bảo vệ</string>
+    <string name="main_section_permissions">Quyền cần cấp</string>
+    <string name="perm_camera">Camera</string>
+    <string name="perm_notifications">Thông báo</string>
+    <string name="perm_overlay">Hiển thị trên ứng dụng khác</string>
+    <string name="perm_battery">Không giới hạn pin (khuyên dùng)</string>
+    <string name="perm_grant">Cấp quyền</string>
+    <string name="main_license_licensed">Bản quyền: %1$s, hiệu lực đến %2$s</string>
+    <string name="main_license_lifetime">Bản quyền: %1$s, vĩnh viễn</string>
+    <string name="main_license_trial">Dùng thử miễn phí đến %1$s</string>
+    <string name="main_license_expired">Hết hạn dùng thử. Nhập mã bản quyền trong Cài đặt.</string>
+    <string name="main_license_unconfigured">Chế độ phát triển (chưa cấu hình máy chủ bản quyền)</string>
+    <string name="main_license_unknown">Chưa kiểm tra bản quyền. Hãy kết nối internet.</string>
+    <string name="main_ai_model">AI: mô hình ước lượng tuổi nâng cao</string>
+    <string name="main_ai_calibrated">AI: chế độ cơ bản, đã hiệu chỉnh theo gia đình</string>
+    <string name="main_ai_needs_calibration">AI: chế độ cơ bản, cần hiệu chỉnh (Cài đặt)</string>
+    <string name="main_btn_settings">Cài đặt (mã PIN phụ huynh)</string>
+    <string name="main_btn_language">Ngôn ngữ / Language</string>
+    <string name="main_version">Phiên bản %1$s</string>
+    <string name="lang_title">Ngôn ngữ</string>
+    <string name="lang_system">Theo điện thoại</string>
+    <string name="lang_vi">Tiếng Việt</string>
+    <string name="lang_en">English</string>
+    <string name="toast_need_permissions">Hãy cấp quyền Camera và Hiển thị trên ứng dụng khác trước.</string>
+    <string name="toast_license_invalid">Dùng thử hoặc bản quyền chưa hiệu lực. Nhập mã bản quyền trong Cài đặt.</string>
+    <string name="toast_need_calibration">Đã bật ở chế độ chờ. Hãy hiệu chỉnh AI trong Cài đặt để nhận diện được trẻ em.</string>
+
+    <!-- Đồng ý sử dụng -->
+    <string name="consent_title">Trước khi bắt đầu</string>
+    <string name="consent_body" formatted="false">Kids Lock là công cụ dành cho phụ huynh. Để hoạt động, ứng dụng dùng camera trước chạy nền vài giây một lần khi màn hình đang sáng, để ước lượng người đang dùng máy có phải trẻ em hay không.\n\n• Hình ảnh camera chỉ được xử lý trên chính điện thoại này, không lưu lại và không gửi đi đâu.\n• Chỉ mã thiết bị, dòng máy và phiên bản ứng dụng được gửi về máy chủ để kiểm tra dùng thử hoặc bản quyền.\n• AI ước lượng tuổi không chính xác 100%: có thể khoá nhầm người lớn hoặc bỏ sót trẻ em, nhất là tuổi thiếu niên. Luôn giữ kỹ mã PIN.\n• Chỉ cài trên điện thoại mà bạn sở hữu hoặc quản lý với tư cách cha mẹ, người giám hộ.\n\nKhi tiếp tục, bạn xác nhận mình là người trưởng thành và đồng ý với Chính sách quyền riêng tư.</string>
+    <string name="consent_accept">Tôi đồng ý</string>
+    <string name="consent_exit">Thoát</string>
+
+    <!-- Mã PIN -->
+    <string name="pin_create_title">Tạo mã PIN phụ huynh</string>
+    <string name="pin_hint">Mã PIN (4–8 chữ số)</string>
+    <string name="pin_confirm_hint">Nhập lại mã PIN</string>
+    <string name="pin_invalid">Mã PIN phải gồm 4–8 chữ số</string>
+    <string name="pin_mismatch">Hai mã PIN không khớp</string>
+    <string name="pin_saved">Đã lưu mã PIN</string>
+    <string name="pin_enter_title">Nhập mã PIN phụ huynh</string>
+    <string name="pin_wrong">Sai mã PIN</string>
+    <string name="pin_locked">Nhập sai quá nhiều lần. Chờ %1$d giây.</string>
+
+    <!-- Cài đặt -->
+    <string name="settings_title">Cài đặt</string>
+    <string name="set_section_detection">Nhận diện</string>
+    <string name="set_age_label">Khoá máy khi người dùng trông nhỏ hơn</string>
+    <string name="set_age_item">%1$d tuổi</string>
+    <string name="set_sensitivity_label">Độ nhạy</string>
+    <string name="sens_low">Thấp: xác nhận 3 lần (ít khoá nhầm)</string>
+    <string name="sens_medium">Vừa: xác nhận 2 lần (khuyên dùng)</string>
+    <string name="sens_high">Cao: khoá ngay</string>
+    <string name="set_interval_label">Kiểm tra mỗi</string>
+    <string name="set_interval_item">%1$d giây</string>
+    <string name="set_grace_label">Sau khi phụ huynh mở khoá, tạm ngưng kiểm tra</string>
+    <string name="set_grace_item">%1$d phút</string>
+    <string name="set_section_ai">Nhận diện AI</string>
+    <string name="set_ai_mode_model">Chế độ: mô hình ước lượng tuổi nâng cao</string>
+    <string name="set_ai_mode_basic">Chế độ: cơ bản (so sánh với khuôn mặt người trong gia đình)</string>
+    <string name="set_cal_hint">Chế độ cơ bản học từ chính gia đình bạn. Cầm máy như bình thường và nhìn vào camera trước khoảng 5 giây. Hiệu chỉnh mỗi người lớn và mỗi bé một lần; càng nhiều mẫu càng chính xác.</string>
+    <string name="set_btn_cal_adult">Hiệu chỉnh: NGƯỜI LỚN đang nhìn</string>
+    <string name="set_btn_cal_child">Hiệu chỉnh: TRẺ EM đang nhìn</string>
+    <string name="set_btn_cal_reset">Xoá dữ liệu hiệu chỉnh</string>
+    <string name="set_btn_test">Kiểm tra ngay</string>
+    <string name="set_need_service">Hãy bật bảo vệ ở màn hình chính trước, rồi thử lại.</string>
+    <string name="set_testing">Hãy nhìn vào camera trước…</string>
+    <string name="test_result">Tuổi ước lượng ≈ %1$.0f (%2$d khung hình) → %3$s. %4$s</string>
+    <string name="test_no_face">Không thấy rõ khuôn mặt. Hãy nhìn thẳng vào camera, đủ ánh sáng.</string>
+    <string name="test_not_ready">AI chưa sẵn sàng. Hãy hiệu chỉnh ít nhất một người lớn và một trẻ em.</string>
+    <string name="result_child">TRẺ EM (sẽ khoá)</string>
+    <string name="result_adult">NGƯỜI LỚN (không khoá)</string>
+    <string name="cal_saved">Đã lưu. Số mẫu: %1$d người lớn, %2$d trẻ em.</string>
+    <string name="cal_failed">Chưa đủ khung hình rõ mặt. Thử lại ở nơi đủ sáng.</string>
+    <string name="cal_reset_done">Đã xoá dữ liệu hiệu chỉnh.</string>
+    <string name="cal_status">Mẫu hiệu chỉnh: %1$d người lớn, %2$d trẻ em</string>
+    <string name="set_section_license">Bản quyền</string>
+    <string name="set_license_hint">Mã bản quyền, ví dụ KL-XXXX-XXXX-XXXX-XXXX</string>
+    <string name="set_btn_activate">Kích hoạt</string>
+    <string name="set_device_id">Mã thiết bị: %1$s</string>
+    <string name="lic_ok">Đã kích hoạt bản quyền. Cảm ơn bạn!</string>
+    <string name="lic_err_invalid_key">Không tìm thấy mã bản quyền</string>
+    <string name="lic_err_revoked">Mã bản quyền này đã bị vô hiệu hoá</string>
+    <string name="lic_err_expired_key">Mã bản quyền này đã hết hạn</string>
+    <string name="lic_err_device_limit">Mã bản quyền đã dùng hết số thiết bị cho phép</string>
+    <string name="lic_err_rate_limited">Thử quá nhiều lần. Vui lòng thử lại sau 1 giờ.</string>
+    <string name="lic_err_network">Không kết nối được máy chủ bản quyền. Kiểm tra internet.</string>
+    <string name="lic_err_unknown">Kích hoạt không thành công. Vui lòng thử lại.</string>
+    <string name="set_section_security">Bảo mật</string>
+    <string name="set_btn_change_pin">Đổi mã PIN phụ huynh</string>
+</resources>

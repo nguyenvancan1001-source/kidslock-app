@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Detection -->
+        <TextView style="@style/SectionTitle" android:text="@string/set_section_detection" />
+
+        <TextView style="@style/FieldLabel" android:text="@string/set_age_label" />
+        <Spinner android:id="@+id/spAge" style="@style/FieldSpinner" />
+
+        <TextView style="@style/FieldLabel" android:text="@string/set_sensitivity_label" />
+        <Spinner android:id="@+id/spSensitivity" style="@style/FieldSpinner" />
+
+        <TextView style="@style/FieldLabel" android:text="@string/set_interval_label" />
+        <Spinner android:id="@+id/spInterval" style="@style/FieldSpinner" />
+
+        <TextView style="@style/FieldLabel" android:text="@string/set_grace_label" />
+        <Spinner android:id="@+id/spGrace" style="@style/FieldSpinner" />
+
+        <!-- AI -->
+        <TextView style="@style/SectionTitle" android:text="@string/set_section_ai" />
+
+        <TextView
+            android:id="@+id/tvAiMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+        <TextView
+            android:id="@+id/tvCalHint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/set_cal_hint"
+            android:textAppearance="?attr/textAppearanceBodySmall" />
+
+        <Button
+            android:id="@+id/btnCalAdult"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/set_btn_cal_adult" />
+
+        <Button
+            android:id="@+id/btnCalChild"
+            style="@style/Widget.Material3.Button.TonalButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/set_btn_cal_child" />
+
+        <TextView
+            android:id="@+id/tvCalStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textAppearance="?attr/textAppearanceBodySmall" />
+
+        <Button
+            android:id="@+id/btnCalReset"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/set_btn_cal_reset" />
+
+        <Button
+            android:id="@+id/btnTest"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/set_btn_test" />
+
+        <TextView
+            android:id="@+id/tvTestResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAppearance="?attr/textAppearanceBodyLarge" />
+
+        <!-- License -->
+        <TextView style="@style/SectionTitle" android:text="@string/set_section_license" />
+
+        <EditText
+            android:id="@+id/etLicense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/set_license_hint"
+            android:importantForAutofill="no"
+            android:inputType="textCapCharacters|textNoSuggestions"
+            android:maxLength="40" />
+
+        <Button
+            android:id="@+id/btnActivate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/set_btn_activate" />
+
+        <TextView
+            android:id="@+id/tvDeviceId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:textIsSelectable="true" />
+
+        <!-- Security -->
+        <TextView style="@style/SectionTitle" android:text="@string/set_section_security" />
+
+        <Button
+            android:id="@+id/btnChangePin"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/set_btn_change_pin" />
+    </LinearLayout>
+</ScrollView>

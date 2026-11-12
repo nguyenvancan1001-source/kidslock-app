@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Adaptive icon foreground: padlock with a small star (108dp canvas, 66dp safe zone) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <path android:fillColor="#FFFFFFFF"
+        android:pathData="M54,30c-8.3,0 -15,6.7 -15,15v6h-3c-2.2,0 -4,1.8 -4,4v20c0,2.2 1.8,4 4,4h36c2.2,0 4,-1.8 4,-4V55c0,-2.2 -1.8,-4 -4,-4h-3v-6C69,36.7 62.3,30 54,30zM45,45c0,-5 4,-9 9,-9s9,4 9,9v6H45V45z"/>
+    <path android:fillColor="#FFFACC15"
+        android:pathData="M54,56l2.4,4.9 5.4,0.8 -3.9,3.8 0.9,5.4 -4.8,-2.5 -4.8,2.5 0.9,-5.4 -3.9,-3.8 5.4,-0.8z"/>
+</vector>
